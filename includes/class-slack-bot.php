@@ -25,8 +25,8 @@ if ( ! class_exists( 'Endo_Slack_Bot' ) ) {
 		public function __construct() 
 		{
 			
-			$this->webhook = 'https://hooks.slack.com/services/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';
-			$this->channel = '#fcwpmeetup';
+			$this->webhook = 'your_hook_here';
+			$this->channel = 'your_default_channel_here';
 
 		}
 
