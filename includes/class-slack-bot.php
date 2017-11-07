@@ -26,7 +26,7 @@ if ( ! class_exists( 'Endo_Slack_Bot' ) ) {
 		{
 			
 			$this->webhook = 'your_hook_here';
-			$this->channel = 'your_default_channel_here';
+			$this->channel = 'your_channel_here';
 
 		}
 

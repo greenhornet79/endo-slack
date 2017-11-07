@@ -24,7 +24,8 @@ if ( ! class_exists( 'Endo_Slack_Notifications' ) ) {
 	
 			// add_action( 'wp_login', array( $this, 'send_login_notification' ), 10, 2 );
 			// add_action( 'woocommerce_checkout_order_processed', array( $this, 'send_new_order_notification' ), 10, 3 );
-	
+			// add_action( 'user_register', array( $this, 'send_new_user_notification') );
+
 		}
 
 		/**
@@ -50,6 +51,21 @@ if ( ! class_exists( 'Endo_Slack_Notifications' ) ) {
 
 			$notif = new Endo_Slack_Bot();
 			$notif->send_message( $posted_data['billing_email'] . ' has placed an order on the site.');
+
+		}
+
+		/**
+		 * After an order is placed, send a notification
+		 *
+		 * @since 1.0.0
+		 */
+		public function send_new_user_notification( $user_id ) 
+		{
+
+			$user = get_userdata( $user_id );
+
+			$notif = new Endo_Slack_Bot();
+			$notif->send_message( $user->user_email . ' has registered on the site.');
 
 		}
 
